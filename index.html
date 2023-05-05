@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <!-- <m eta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+
+  <title>GMD PRINTER APP</title>
+
+  <style>
+    body {
+      font-family: sans-serif
+    }
+  </style>
+</head>
+
+<body>
+  <h1>GMD PRINTER APP</h1>
+  <p>Available printers</p>
+  <div id='list_printers'></div>
+  <br>
+  
+  <!-- You can also require other files to run in this process -->
+  <script src="./renderer.js"></script>
+</body>
+
+</html>

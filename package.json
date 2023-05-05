@@ -1,0 +1,31 @@
+{
+  "name": "electron-printer",
+  "version": "1.0.0",
+  "description": "Test for Rollo printer - thermal printers too",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish"
+  },
+  "repository": "https://github.com/malik-93/electron-printer",
+  "keywords": [
+    "Electron",
+    "printer",
+    "node-printer",
+    "rollo-printer"
+  ],
+  "author": "Mudassir Malik",
+  "devDependencies": {
+    "electron": "^9.1.0",
+    "@electron-forge/cli": "^6.1.1",
+    "@electron-forge/maker-deb": "^6.1.1",
+    "@electron-forge/maker-rpm": "^6.1.1",
+    "@electron-forge/maker-squirrel": "^6.1.1",
+    "@electron-forge/maker-zip": "^6.1.1"
+  },
+  "dependencies": {
+    "electron-pos-printer": "^1.2.0"
+  }
+}
