@@ -1,5 +1,12 @@
 module.exports = {
-  packagerConfig: {},
+  packagerConfig: {
+    protocols: [
+      {
+        "name": "Electron Fiddle",
+        "schemes": ["electron-fiddle-gmd"]
+      }
+    ]
+  },
   rebuildConfig: {},
   makers: [
     {
@@ -12,7 +19,9 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-deb',
-      config: {},
+      config: {
+        "mimeType": ["x-scheme-handler/electron-fiddle-gmd"]
+      },
     },
     {
       name: '@electron-forge/maker-rpm',
