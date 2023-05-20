@@ -1,5 +1,5 @@
 {
-  "name": "electron-printer",
+  "name": "gmd-electron-rollo-printer",
   "version": "1.0.0",
   "description": "Test for Rollo printer - thermal printers too",
   "main": "main.js",
@@ -9,7 +9,7 @@
     "make": "electron-forge make",
     "publish": "electron-forge publish"
   },
-  "repository": "https://github.com/malik-93/electron-printer",
+  "repository": "https://github.com/malik-93/gmd-electron-rollo-printer",
   "keywords": [
     "Electron",
     "printer",
