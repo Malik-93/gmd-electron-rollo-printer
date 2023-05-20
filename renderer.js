@@ -6,7 +6,7 @@ const DATE_TIME = `${new Intl.DateTimeFormat('en-US', {
   minute: '2-digit',
   hour12: false,
 }).format(Date.now())}`
-let { remote,protocol } = require("electron");
+let { remote, protocol } = require("electron");
 // console.log(process.versions.electron);
 
 const { PosPrinter, } = remote.require("electron-pos-printer");
@@ -14,10 +14,10 @@ const { PosPrinter, } = remote.require("electron-pos-printer");
 
 const path = require("path");
 const file_path = `file://${path.join(__dirname, 'assets', 'ws_special.png')}`
-console.log('file_path',file_path);
+console.log('file_path', file_path);
 let webContents = remote.getCurrentWebContents();
-// let printers = webContents.getPrinters().filter(p => p.name.toLowerCase().includes("rollo")); //list the printers
-let printers = webContents.getPrinters(); //list the printers
+let printers = webContents.getPrinters().filter(p => p.name.toLowerCase().includes("rollo")); //list the printers
+// let printers = webContents.getPrinters(); //list the printers
 console.log(printers);
 
 printers.map((item, index) => {
@@ -27,8 +27,13 @@ printers.map((item, index) => {
   <p id=printer_${index}>${item.name}</p> 
   <input onclick="print(false,${index})" type="button" value="print" style="margin-left: 10px" />
   <input onclick="print(true,${index})" type="button" value="preview" style="margin-left: 10px" />
+  <input onclick="getPrinterInfo(${index})" type="button" value="Get Info" style="margin-left: 10px" />
   </div>`;
 });
+function getPrinterInfo(index) {
+  const info = printers[index].options;
+  console.log('[Printer Info]', info)
+}
 function print(preview = false, index = 0) {
   try {
     let printerName = printers[index].name;
@@ -59,7 +64,7 @@ function print(preview = false, index = 0) {
       },
       {
         type: 'image',
-        url:'https://www.shutterstock.com/image-vector/gmd-letter-logo-design-on-260nw-2201673681.jpg', // file path
+        url: 'https://www.shutterstock.com/image-vector/gmd-letter-logo-design-on-260nw-2201673681.jpg', // file path
         position: 'center',                                  // position of image: 'left' | 'center' | 'right'
         width: '100px',                                           // width of image in px; default: auto
         height: '100px',                                          // width of image in px; default: 50 or '50px'
